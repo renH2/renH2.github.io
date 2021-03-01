@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2021/02/28/JS-note/</loc>
+    <loc>http://renh2.github.io/resources/index.html</loc>
+    
+    <lastmod>2021-03-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://renh2.github.io/favorite/index.html</loc>
+    
+    <lastmod>2021-03-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://renh2.github.io/2021/02/28/JS-note/</loc>
     
     <lastmod>2021-02-28</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/02/28/hello-world/</loc>
+    <loc>http://renh2.github.io/2021/02/28/hello-world/</loc>
     
     <lastmod>2021-02-28</lastmod>
     
@@ -17,7 +31,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>http://renh2.github.io/</loc>
     <lastmod>2021-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
