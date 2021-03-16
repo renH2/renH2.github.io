@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>My</title>
   
-  <subtitle>just for fun</subtitle>
+  <subtitle>[object Object]</subtitle>
   <link href="http://renh2.github.io/atom.xml" rel="self"/>
   
   <link href="http://renh2.github.io/"/>
