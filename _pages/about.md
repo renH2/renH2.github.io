@@ -30,14 +30,14 @@ Full version see [Google Scholar](https://scholar.google.com/citations?user=9mxd
 
 [⛄️ **Graph Domain Adaptation from Data-centric Perspective**]
 
-- **Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang. [Can Modifying Data Address Graph Domain Adaptation?](https://arxiv.org/pdf/2407.19311) In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining(KDD'24), 2024.
+- **Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang. [Can Modifying Data Address Graph Domain Adaptation?](https://arxiv.org/pdf/2407.19311) In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'24), 2024.
 
 [🛎 **Graph Fine-tuning by Narrowing Task Gap**]
 - **Renhong Huang**, Jiarong Xu, Xin Jiang, Chenglu Pan, Zhiming Yang, Chunping Wang, Yang Yang. [Measuring Task Similarity and Its Implication in Fine-Tuning Graph Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/29156). In Proceedings of the 36th AAAI Conference on Artificial Intelligence (AAAI'24), 2024.
 
 
 [⚡️**Graph Pre-training from Data-centric Perspective**]
-- Jiarong Xu, **Renhong Huang**, Xin Jiang, Yuxuan Cao, Carl Yang, Chunping Wang, Yang Yang. [Better with Less: A Data-Centric Prespective on Pre-Training Graph Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf)  In Proceedings of the 36th Advances in Neural Information Processing Systems (NeurIPS'23), 2023.
+- Jiarong Xu, **Renhong Huang**, Xin Jiang, Yuxuan Cao, Carl Yang, Chunping Wang, Yang Yang. [Better with Less: A Data-Centric Prespective on Pre-Training Graph Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf). In Proceedings of the 36th Advances in Neural Information Processing Systems (NeurIPS'23), 2023.
 
 ### Break the limitation of GNNs on graph data homophily
 [🎈**Generalization at the Graph Data Level**]
