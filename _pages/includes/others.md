@@ -3,9 +3,9 @@
 - *2022.09 - 2025.03*, M.Phil student, Zhejiang University, Hangzhou.
 - *2018.09 - 2022.06*, Undergraduate, Chu Kochen Honors College, Zhejiang University, Hangzhou.
 
-# 💬 Invited Talks
-- *2022.02*, Hosted MLNLP seminar \| [\[Video\]](https://www.bilibili.com/video/BV1wF411x7qh)
-- *2021.06*, Audio & Speech Synthesis, Huawei internal talk
+# 🗞️ Academic Services
+- Conference Reviewer: WWW'22/23, IJCAI'23, AAAI'23, WSDM'23, SMP'23, ICLR'23, ICML'24, KDD'23/24/25, NeurIPS'24.
+- Teaching Assistant: Artificial Intelligence Algorithms and Systems, Zhejiang University, Fall 2023/Fall 2024.
 
 
 # 💻 Internships
