@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Yi Ren (任意)"
+title                    : "Renhong Huang"
 description              : "Research scientist in TikTok, Data-Speech Dept. Focusing on speech, NLP and music."
 repository               : "rayeren/rayeren.github.io"
 google_scholar_stats_use_cdn : true
