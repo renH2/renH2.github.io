@@ -41,6 +41,35 @@ In Proceedings of the 36th Advances in Neural Information Processing Systems (Ne
 </div>
 </div>
 
+
+## ⚡️ Graph Adversarial Attack
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/nips24a.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Graph Extraction Attack** \\
+[Extracting Training Data from Molecular Pre-trained Models](https://proceedings.neurips.cc/paper_files/paper/2024/file/b17e1642998a8214be240b3056f5faa5-Paper-Conference.pdf) \\
+**Renhong Huang**, Jiarong Xu, Zhiming Yang, Xiang Si, Xin Jiang, Hanyang Yuan, Chunping Wang, Yang Yang \\
+  \\
+In Proceedings of the 37th Advances in Neural Information Processing Systems (NeurIPS'24).  \\
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/nips24b.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Efficient Graph Property Inference Attack** \\
+[Can Graph Neural Networks Expose Training Data Properties? An Efficient Risk Assessment Approach](https://arxiv.org/pdf/2411.03663) \\
+Hanyang Yuan, Jiarong Xu, **Renhong Huang**, Mingli Song, Chunping Wang, Yang Yang \\
+ \\
+In Proceedings of the 37th Advances in Neural Information Processing Systems (NeurIPS'24).  \\
+</div>
+</div>
+
+
 ## 🎈 Graph homophily
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IJCAI 2022</div><img src='images/ijcai22.png' alt="sym" width="100%"></div></div>
