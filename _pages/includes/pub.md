@@ -1,7 +1,7 @@
 
-# 🍉 Selected Publications
+# 🍉 Publications
 
-Full version see [Google Scholar](https://scholar.google.com/citations?user=9mxdFawAAAAJ)
+[//]: # (Full version see [Google Scholar]&#40;https://scholar.google.com/citations?user=9mxdFawAAAAJ&#41;)
 
 ## 🎙 Graph Transfer Learning
 

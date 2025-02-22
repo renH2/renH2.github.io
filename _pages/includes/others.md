@@ -8,6 +8,7 @@
 - Teaching Assistant: Artificial Intelligence Algorithms and Systems, Zhejiang University, Fall 2023/Fall 2024.
 
 
-# 💻 Internships
-- *2024.12 - Now*, Alibaba, Hangzhou.
-- *2023.09 - 2024.03*, [EnjoyMusic](https://enjoymusic.ai/), Hangzhou.
+# 💻 Research Topics
+- Graph Transfer Learning
+- Graph Adversarial Attack
+- LLM Agent
