@@ -72,7 +72,7 @@ In Proceedings of the 37th Advances in Neural Information Processing Systems (Ne
 </div>
 
 
-## 🎈 Graph homophily
+## 🎈 Graph Homophily
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IJCAI 2022</div><img src='images/ijcai22.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
