@@ -1,14 +1,14 @@
 
 # 🍉 Publications 
-## 🎙 Graph Transfer Learning
 
+## 🎙 Graph Transfer Learning
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><img src='images/kdd24.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
+**Graph Domain Adaptation from Data-centric Perspective** \\
 [Can Modifying Data Address Graph Domain Adaptation?](https://arxiv.org/pdf/2407.19311) \\
-**Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang.
-Graph Domain Adaptation from Data-centric Perspective
+**Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang. \\
 In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'24), 2024.
 
 </div>
@@ -19,8 +19,10 @@ In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data
 <div class='paper-box-text' markdown="1">
 
 [Measuring Task Similarity and Its Implication in Fine-Tuning Graph Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/29156) \\
-**Renhong Huang**, Jiarong Xu, Xin Jiang, Chenglu Pan, Zhiming Yang, Chunping Wang, Yang Yang.
-Graph Fine-tuning by Narrowing Task Gap
+**Renhong Huang**, Jiarong Xu, Xin Jiang, Chenglu Pan, Zhiming Yang, Chunping Wang, Yang Yang. \\
+Graph Fine-tuning by Narrowing Task Gap \\
+
+In Proceedings of the 36th AAAI Conference on Artificial Intelligence (AAAI'24), 2024.\\
 
 </div>
 </div>
