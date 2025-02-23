@@ -36,7 +36,7 @@ In Proceedings of the 36th AAAI Conference on Artificial Intelligence (AAAI'24).
 
 **Graph Pre-training from Data-centric Perspective** \\
 [Better with Less: A Data-Centric Prespective on Pre-Training Graph Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf) \\
-\\
+
 Jiarong Xu, **Renhong Huang**, Xin Jiang, Yuxuan Cao, Carl Yang, Chunping Wang, Yang Yang. \\
  \\
 In Proceedings of the 36th Advances in Neural Information Processing Systems (NeurIPS'23). 
