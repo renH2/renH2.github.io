@@ -428,8 +428,8 @@
 
     const chart = echarts.init(document.getElementById('chinaMap'));
 
-    // 加载中国地图 GeoJSON
-    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+    // 加载本地地图数据
+    fetch('./map.json')
       .then(res => res.json())
       .then(geoJson => {
         echarts.registerMap('china', geoJson);
