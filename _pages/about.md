@@ -17,4 +17,6 @@ redirect_from:
 
 {% include_relative includes/honers.md %}
 
+**⚡ [Demo](/demo/)** - 我做的一些有趣的小网页
+
 {% include_relative includes/others.md %}

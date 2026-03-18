@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>猜字谜小游戏 ✨</title>
+  <style>
+    :root {
+      --bg-gradient-1: #fff5f7;
+      --bg-gradient-2: #ffe8ec;
+      --card-bg: #ffffff;
+      --primary: #ff6b9d;
+      --primary-soft: #ffb3cc;
+      --primary-light: #ffe4ec;
+      --accent: #7ec8e3;
+      --accent-soft: #b8e5f0;
+      --text: #5d4e60;
+      --text-light: #8b7d8e;
+      --shadow: rgba(255, 107, 157, 0.25);
+      --shadow-soft: rgba(126, 200, 227, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      color: var(--text);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '🌸';
+      position: fixed;
+      top: 20px;
+      left: 5%;
+      font-size: 2rem;
+      opacity: 0.6;
+      animation: float 4s ease-in-out infinite;
+    }
+    body::after {
+      content: '✨';
+      position: fixed;
+      top: 80px;
+      right: 8%;
+      font-size: 1.5rem;
+      opacity: 0.5;
+      animation: float 3s ease-in-out infinite 1s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0;
+      filter: drop-shadow(0 2px 4px var(--shadow));
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .riddle-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px var(--shadow), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      border: 3px solid var(--primary-soft);
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .riddle-card:hover,
+    .riddle-card:active {
+      transform: translateY(-2px) scale(1.005);
+      box-shadow: 0 12px 40px var(--shadow), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    }
+
+    .riddle-card::before {
+      content: '🐰';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      font-size: 1.8rem;
+      background: var(--card-bg);
+      padding: 0 4px;
+    }
+
+    .riddle-label {
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .riddle-question {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1rem;
+      min-height: 2.5em;
+    }
+
+    .riddle-card.revealed .riddle-question {
+      margin-bottom: 0.5rem;
+    }
+
+    .riddle-answer {
+      display: none;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      padding-top: 0.75rem;
+      border-top: 2px dashed var(--primary-soft);
+    }
+
+    .riddle-card.revealed .riddle-answer {
+      display: block;
+      animation: popIn 0.4s ease;
+    }
+
+    .answer-char {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+      font-size: 3rem;
+      color: var(--primary);
+      display: inline-block;
+      margin: 0.25rem 0;
+      text-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .answer-hint {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      font-family: inherit;
+      padding: 0.9rem 1.8rem;
+      min-height: 48px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      touch-action: manipulation;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8fab 100%);
+      color: white;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px var(--shadow);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .click-hint {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+    }
+
+    .click-hint span {
+      display: inline-block;
+      animation: bounce 2s ease infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .deco-cloud {
+      position: fixed;
+      font-size: 3rem;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    .deco-cloud:nth-child(1) { bottom: 15%; right: 10%; animation: drift 8s ease-in-out infinite; }
+    .deco-cloud:nth-child(2) { bottom: 25%; left: 5%; animation: drift 10s ease-in-out infinite 2s; }
+    .deco-cloud:nth-child(3) { top: 30%; right: 15%; animation: drift 7s ease-in-out infinite 1s; }
+    @keyframes drift {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="deco-cloud">☁️</div>
+  <div class="deco-cloud">🫧</div>
+  <div class="deco-cloud">⭐</div>
+
+  <div class="container">
+    <header>
+      <h1 class="title">猜字谜小游戏</h1>
+      <p class="subtitle">点击卡片查看答案，再点一次换新题～</p>
+    </header>
+
+    <div class="riddle-card" id="riddleCard">
+      <div class="riddle-label">📝 字谜题目</div>
+      <div class="riddle-question" id="riddleQuestion">加载中...</div>
+      <div class="riddle-answer" id="riddleAnswer">
+        <div>答案：<span class="answer-char" id="answerChar"></span></div>
+        <div class="answer-hint" id="answerHint"></div>
+      </div>
+    </div>
+
+    <p class="click-hint"><span>👆 点击卡片揭晓答案</span></p>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="nextRiddle()">🔮 换一题</button>
+    </div>
+  </div>
+
+  <script>
+    const riddles = [
+      { q: "一口咬掉牛尾巴", a: "告", hint: "牛字的尾巴被咬掉啦" },
+      { q: "七十二小时", a: "晶", hint: "三天 = 72小时，三天组成晶" },
+      { q: "一半儿", a: "伴", hint: "儿字的一半" },
+      { q: "人不在其位", a: "立", hint: "位字去掉人" },
+      { q: "八十八", a: "米", hint: "八+十+八=米" },
+      { q: "一字十三点，难在如何点", a: "汁", hint: "十字加三点水" },
+      { q: "二山在一起，猜出便错了", a: "击", hint: "二和山组合" },
+      { q: "人有他则变大", a: "一", hint: "人+一=大" },
+      { q: "刀出鞘", a: "力", hint: "刀字去掉了壳" },
+      { q: "一人在内", a: "肉", hint: "人字在框框里" },
+      { q: "一勾心月伴三星", a: "心", hint: "心字像弯月带三点" },
+      { q: "一加一", a: "王", hint: "一+一竖+一" },
+      { q: "一人", a: "大", hint: "人字加一横" },
+      { q: "一人一张口，口下长只手", a: "拿", hint: "合+手" },
+      { q: "一人挑两小人", a: "火", hint: "人字两边各一点" },
+      { q: "一人腰上挂把弓", a: "夷", hint: "大+弓" },
+      { q: "一口吃掉牛尾巴", a: "告", hint: "牛字去尾巴加口" },
+      { q: "一大二小", a: "奈", hint: "大+二+小" },
+      { q: "一斗米", a: "料", hint: "米+斗" },
+      { q: "一月七日", a: "脂", hint: "月+七日" },
+      { q: "一加一，不是二", a: "王", hint: "横竖横" },
+      { q: "一字十三点", a: "汁", hint: "十+三点" },
+      { q: "二小姐", a: "姿", hint: "次+女" },
+      { q: "二兄弟，各自立", a: "竞", hint: "两个兄字" },
+      { q: "人无远虑，必有近忧", a: "忘", hint: "亡+心" },
+      { q: "人无信不立", a: "言", hint: "言字代表信" },
+      { q: "十两多一点", a: "斥", hint: "斤+一点" },
+      { q: "上下合一", a: "卡", hint: "上+下" },
+      { q: "千里姻缘一线牵", a: "重", hint: "千里=重" },
+      { q: "土上有竹林，土下一寸金", a: "等", hint: "竹+寺" },
+      { q: "大口加小口", a: "回", hint: "口套口" },
+      { q: "大雨落在横山上", a: "雪", hint: "雨+彐" },
+      { q: "小姑娘", a: "妙", hint: "女+少" },
+      { q: "山上还有山", a: "出", hint: "山摞山" },
+      { q: "不要讲话", a: "吻", hint: "勿+口" },
+      { q: "打断念头", a: "心", hint: "念字头断了" },
+      { q: "半推半就", a: "掠", hint: "推+就各取一半" },
+      { q: "四边残缺", a: "匹", hint: "四字残缺" },
+      { q: "出一半有何不可", a: "仙", hint: "山+人" },
+      { q: "守门员", a: "闪", hint: "门+人" },
+      { q: "因为自大一点，惹得人人讨厌", a: "臭", hint: "自+大+丶" },
+      { q: "旭日东升", a: "九", hint: "旭的日升走了" },
+      { q: "有心得志", a: "士", hint: "志字有心" },
+      { q: "有目共睹", a: "者", hint: "者+目=睹" },
+      { q: "有两个动物，一个在水里，一个在山上", a: "鲜", hint: "鱼+羊" },
+      { q: "皇帝新衣", a: "袭", hint: "龙+衣" },
+      { q: "草上飞", a: "早", hint: "草字头飞走" },
+    ];
+
+    let currentIndex = 0;
+
+    function getRandomRiddle() {
+      const idx = Math.floor(Math.random() * riddles.length);
+      currentIndex = idx;
+      return riddles[idx];
+    }
+
+    function showRiddle(riddle, reveal = false) {
+      const card = document.getElementById('riddleCard');
+      document.getElementById('riddleQuestion').textContent = riddle.q;
+      document.getElementById('answerChar').textContent = riddle.a;
+      document.getElementById('answerHint').textContent = riddle.hint;
+
+      if (reveal) {
+        card.classList.add('revealed');
+      } else {
+        card.classList.remove('revealed');
+      }
+    }
+
+    function nextRiddle() {
+      const riddle = getRandomRiddle();
+      showRiddle(riddle, false);
+    }
+
+    document.getElementById('riddleCard').addEventListener('click', function() {
+      const card = this;
+      if (card.classList.contains('revealed')) {
+        nextRiddle();
+      } else {
+        card.classList.add('revealed');
+      }
+    });
+
+    showRiddle(getRandomRiddle(), false);
+  </script>
+</body>
+</html>
