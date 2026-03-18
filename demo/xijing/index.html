@@ -264,139 +264,139 @@
   </div>
 
   <script>
-    // 省份春季风光数据
+    // 省份春季风光数据 - 图片均来自Unsplash免费图库
     const sceneryData = {
       '北京': {
         title: '颐和园 · 西堤桃花',
         desc: '春风拂面，颐和园西堤的桃花竞相绽放，粉白相间映衬着昆明湖的碧水，是京城春日里最美的画卷。',
         emoji: '🌸',
-        img: 'https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=600&q=80'
       },
       '上海': {
-        title: '顾村公园 · 樱花盛放',
-        desc: '三月樱花如雪，顾村公园里粉色云霞铺满枝头，漫步樱花树下，仿佛置身童话世界。',
-        emoji: ' Sakura',
-        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80'
+        title: '外滩 · 陆家嘴春色',
+        desc: '春天的外滩，万国建筑群与陆家嘴金融区交相辉映，黄浦江畔柳绿花红，呈现魔都独特的春日魅力。',
+        emoji: '🌆',
+        img: 'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=600&q=80'
       },
       '浙江': {
         title: '西湖 · 苏堤春晓',
         desc: '西湖十景之首！苏堤两岸柳绿桃红，春水碧于天，画船听雨眠，是江南春色最动人的写照。',
         emoji: '🏞️',
-        img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1588417472368-3eb5182898b3?w=600&q=80'
       },
       '江苏': {
-        title: '扬州瘦西湖 · 烟花三月',
-        desc: '烟花三月下扬州！瘦西湖畔琼花盛开，五亭桥倒映碧波，是古诗里最美的江南春景。',
-        emoji: '🛶',
-        img: 'https://images.unsplash.com/photo-1578645510387-e2b29c6519f4?w=600&q=80'
+        title: '苏州园林 · 拙政园春色',
+        desc: '拙政园内春意盎然，香洲岛的柳枝随风摇曳，与假山流水相映成趣，展现江南园林的精致之美。',
+        emoji: '🏯',
+        img: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80'
       },
       '四川': {
-        title: '川西 · 梨花满山',
-        desc: '金川河谷、丹巴藏寨，三月梨花如雪覆盖山野，雪山与花海交相辉映，美如仙境。',
-        emoji: '雪山',
+        title: '九寨沟 · 五花海春色',
+        desc: '春天的九寨沟，湖水更加碧绿澄澈，五花海如同调色盘，彩林倒映水中，宛若人间仙境。',
+        emoji: '💙',
         img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80'
       },
       '云南': {
-        title: '罗平 · 油菜花海',
-        desc: '二月的罗平，80万亩油菜花盛开，金黄的花海与喀斯特峰林相映，是中国最早的春天。',
-        emoji: '🌼',
-        img: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=80'
+        title: '丽江古城 · 玉龙雪山',
+        desc: '春天的丽江古城，玉龙雪山巍峨耸立，城内垂柳依依，小桥流水，纳西古乐悠扬回荡。',
+        emoji: '🗺️',
+        img: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=600&q=80'
       },
       '西藏': {
-        title: '林芝 · 桃花沟',
-        desc: '三月林芝，雪山脚下桃花怒放，粉色的桃花与洁白的雪峰、碧绿的雅鲁藏布江构成绝世美景。',
+        title: '布达拉宫 · 圣城春光',
+        desc: '春日的拉萨，蓝天白云下布达拉宫更加雄伟壮观，周围的桃花盛开，感受高原圣城的独特魅力。',
         emoji: '🏔️',
-        img: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80'
       },
       '新疆': {
-        title: '伊犁 · 杏花沟',
-        desc: '四月的伊犁杏花沟，野生杏花漫山遍野，牧民与牛羊穿行花海，是塞外江南的春日童话。',
-        emoji: '🐴',
-        img: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80'
+        title: '喀纳斯 · 春天的湖光山色',
+        desc: '春天的喀纳斯，湖水碧绿如翡翠，四周森林渐绿，牧民开始转场，展现塞外江南的神奇风光。',
+        emoji: '🌲',
+        img: 'https://images.unsplash.com/photo-1570018144715-431102400e29?w=600&q=80'
       },
       '内蒙古': {
-        title: '草原 · 初绿返青',
+        title: '呼伦贝尔草原 · 春意初现',
         desc: '四月起，草原渐渐苏醒，嫩绿的新草铺满大地，蓝天白云下骏马奔驰，春日草原生机勃勃。',
         emoji: '🐎',
-        img: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1504870712357-65f7208dd2cd?w=600&q=80'
       },
       '江西': {
         title: '婺源 · 油菜花与徽派',
         desc: '中国最美乡村！三月婺源，梯田油菜花金黄灿烂，白墙黛瓦的徽派民居点缀其中，宛如水墨画。',
         emoji: '🏡',
-        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=600&q=80'
       },
       '湖北': {
-        title: '武汉 · 樱花季',
-        desc: '东湖樱园、武汉大学，三月樱花烂漫，万株樱花齐放，是华中地区最美的春日盛景。',
-        emoji: ' Sakura',
-        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80'
+        title: '武汉 · 黄鹤楼春色',
+        desc: '春日黄鹤楼，长江碧波荡漾，龟山蛇山绿意盎然，登楼远眺，武汉三镇春色尽收眼底。',
+        emoji: '🏯',
+        img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600&q=80'
       },
       '山东': {
-        title: '济南 · 趵突泉春色',
-        desc: '天下第一泉畔，柳丝垂绿、迎春吐黄，泉水清澈见底，春日里的泉城分外妖娆。',
-        emoji: '💧',
-        img: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80'
+        title: '泰山 · 春日云海',
+        desc: '春天的泰山，日出云海蔚为壮观，岱庙内古柏苍松，桃花盛开，登泰山而小天下。',
+        emoji: '⛰️',
+        img: 'https://images.unsplash.com/photo-1533069494419-856a8d44e6bb?w=600&q=80'
       },
       '河南': {
-        title: '洛阳 · 牡丹花开',
-        desc: '唯有牡丹真国色！四月的洛阳，各色牡丹竞相绽放，雍容华贵，是中华春色的巅峰。',
-        emoji: '🌺',
-        img: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=80'
+        title: '洛阳 · 龙门石窟',
+        desc: '春天的洛阳，龙门石窟巍然屹立，伊河两岸垂柳如丝，白马寺内牡丹即将绽放，古都春意浓。',
+        emoji: '🛕',
+        img: 'https://images.unsplash.com/photo-1591123720675-6f7f1aae0e5b?w=600&q=80'
       },
       '陕西': {
-        title: '西安 · 青龙寺樱花',
-        desc: '青龙寺内千株樱花，源自日本赠与的珍贵品种，盛放时如云如霞，古寺与樱花相得益彰。',
-        emoji: '⛩️',
-        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80'
+        title: '西安 · 大雁塔春色',
+        desc: '春日的西安，大雁塔巍然耸立，周围的桃花、杏花盛开，古城墙下绿柳成荫，历史与春意交融。',
+        emoji: '🏰',
+        img: 'https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=600&q=80'
       },
       '广东': {
-        title: '广州 · 木棉花开',
-        desc: '英雄花红遍羊城！三月木棉怒放，火红的花朵挂在枝头，是南国春日最热烈的色彩。',
-        emoji: '🌳',
-        img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80'
+        title: '广州 · 珠江夜游',
+        desc: '春天的广州，珠江两岸繁花似锦，木棉花开正艳，小蛮腰霓虹闪烁，岭南春色璀璨夺目。',
+        emoji: '🌺',
+        img: 'https://images.unsplash.com/photo-1548499796-5d9fb2a25e49?w=600&q=80'
       },
       '广西': {
-        title: '桂林 · 山水如画',
+        title: '桂林 · 漓江春色',
         desc: '桂林山水甲天下！春日漓江两岸翠竹青青，山峰倒影碧水中，烟雨漓江美不胜收。',
         emoji: '⛵',
-        img: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1537531383496-f4749a4b8590?w=600&q=80'
       },
       '海南': {
-        title: '热带 · 三角梅盛放',
-        desc: '海南的春天来得最早！三角梅、木棉花、凤凰花竞相绽放，海岛春意盎然，四季如春。',
-        emoji: '🌴',
-        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80'
+        title: '三亚 · 亚龙湾海春',
+        desc: '海南的春天来得最早！碧海蓝天，椰风海韵，三亚的春天永远是那么温暖明媚，度假天堂。',
+        emoji: '🏖️',
+        img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&q=80'
       },
       '福建': {
-        title: '永福 · 樱花茶园',
-        desc: '大陆阿里山！二月永福樱花园，粉樱与绿茶交织，樱花树下品春茶，别有一番韵味。',
+        title: '武夷山 · 春季山水',
+        desc: '春天的武夷山，九曲溪水碧绿，大红袍茶园绿意盎然，乘竹筏漂流，感受闽北山水之美。',
         emoji: '🍵',
-        img: 'https://images.unsplash.com/photo-1556679343-c7306c7916f2?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1545147986-a9d6f2ab03b5?w=600&q=80'
       },
       '湖南': {
         title: '张家界 · 峰林春色',
         desc: '春日张家界，奇峰耸立、溪水潺潺，山花烂漫点缀在石英砂岩峰林间，宛如仙境。',
         emoji: '🏔️',
-        img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1565063095094-895f0c2a7345?w=600&q=80'
       },
       '贵州': {
-        title: '毕节 · 百里杜鹃',
-        desc: '世界最大的天然杜鹃花园！三四月间，百里杜鹃花海怒放，姹紫嫣红铺满山野。',
-        emoji: '🌸',
-        img: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=80'
+        title: '黄果树瀑布 · 春季水量',
+        desc: '春天的黄果树瀑布，水量充沛，瀑布如银帘般倾泻而下，周围绿意盎然，蔚为壮观。',
+        emoji: '💦',
+        img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80'
       },
       '辽宁': {
-        title: '大连 · 樱花与海',
-        desc: '北方滨海樱花！旅顺龙王塘、大连植物园，四月樱花开满枝头，面朝大海春暖花开。',
-        emoji: '🌊',
-        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80'
+        title: '沈阳故宫 · 春季红墙',
+        desc: '春日的沈阳故宫，红墙金瓦与蓝天白云交相辉映，凤凰楼前柳绿花红，感受清代皇宫的庄严。',
+        emoji: '🏛️',
+        img: 'https://images.unsplash.com/photo-1577083288073-40892c0860a4?w=600&q=80'
       },
       '台湾': {
-        title: '阿里山 · 樱花季',
-        desc: '阿里山樱花季闻名遐迩！三月吉野樱、八重樱次第绽放，乘着小火车穿越樱花隧道，浪漫满分。',
+        title: '日月潭 · 春季湖光',
+        desc: '春天的日月潭，湖水碧绿如镜，潭四周群山环抱，樱花盛开，阿里山茶园绿意盎然。',
         emoji: '🚂',
-        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80'
+        img: 'https://images.unsplash.com/photo-1565679323277-03c242c5769e?w=600&q=80'
       }
     };
 
