@@ -428,46 +428,10 @@
 
     const chart = echarts.init(document.getElementById('chinaMap'));
 
-    // 加载中国地图 GeoJSON - 使用多个数据源
-    const mapUrls = [
-      'https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json',
-      'https://raw.githubusercontent.com/lydmm/datas/master/china.json'
-    ];
-
-    // 启动地图加载
-    initMap();
-
-    function loadMap(url) {
-      return fetch(url)
-        .then(res => {
-          if (!res.ok) throw new Error('Network response was not ok');
-          return res.json();
-        });
-    }
-
-    function initMap() {
-      let currentUrlIndex = 0;
-
-      function tryLoadNext() {
-        if (currentUrlIndex >= mapUrls.length) {
-          document.getElementById('chinaMap').innerHTML =
-            '<div style="padding:2rem;text-align:center;color:#8b7355;">地图加载失败，请检查网络后刷新～</div>';
-          return Promise.reject('All map sources failed');
-        }
-
-        const url = mapUrls[currentUrlIndex++];
-        console.log('尝试加载地图:', url);
-        return loadMap(url)
-          .then(data => {
-            return data;
-          })
-          .catch(err => {
-            console.warn('地图源加载失败:', url, err);
-            return tryLoadNext();
-          });
-      }
-
-      return tryLoadNext().then(geoJson => {
+    // 加载中国地图 GeoJSON
+    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+      .then(res => res.json())
+      .then(geoJson => {
         echarts.registerMap('china', geoJson);
 
         const scatterData = Object.entries(provinceCoords).map(([name, coord]) => ({
