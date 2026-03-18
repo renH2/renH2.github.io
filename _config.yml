@@ -64,6 +64,7 @@ include:
   - .htaccess
   - _pages
   - files
+  - demo
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -92,6 +93,7 @@ exclude:
   - github_myprofile_updater
 keep_files:
   - .git
+  - demo
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
