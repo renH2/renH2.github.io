@@ -3,7 +3,7 @@
 [//]: # (Full version see [Google Scholar]&#40;https://scholar.google.com/citations?user=9mxdFawAAAAJ&#41;)
 
 <div class='pub-note' markdown="1">
-My recent work is organized around **foundation models for structured data and interactive agents**: multi-agent interaction, agentic RL, agent grounding and evaluation, and preference modeling for alignment. I am also exploring embodied agents and humanoid VLA. Earlier work focused on graph learning foundations, especially transfer, robustness, and privacy.
+My earlier work focused on graph learning foundations and foundation models for structured data, especially transfer, robustness, and privacy. My current research centers on **LLM agents**, including multi-agent interaction, agentic RL, agent grounding and evaluation, and preference modeling for alignment. I am also exploring embodied agents and humanoid VLA.
 </div>
 
 ## 🤖 Agentic RL, Multi-Agent Systems, and Agent Benchmarks
