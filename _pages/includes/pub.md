@@ -3,13 +3,13 @@
 [//]: # (Full version see [Google Scholar]&#40;https://scholar.google.com/citations?user=9mxdFawAAAAJ&#41;)
 
 <div class='pub-note' markdown="1">
-My recent work is organized around **LLM agents**: multi-agent interaction, agentic RL, agent grounding and evaluation, and preference modeling for alignment. Earlier work focused on graph learning foundations, especially transfer, robustness, and privacy.
+My recent work is organized around **foundation models for structured data and interactive agents**: multi-agent interaction, agentic RL, agent grounding and evaluation, and preference modeling for alignment. I am also exploring embodied agents and humanoid VLA. Earlier work focused on graph learning foundations, especially transfer, robustness, and privacy.
 </div>
 
-## 🤖 Multi-Agent Systems, Agentic RL, Agent Benchmarks
+## 🤖 Agentic RL, Multi-Agent Systems, and Agent Benchmarks
 
 <div class='research-cluster' markdown="1">
-This line of work studies agents as complete systems: how they interact in social environments, how they improve through reinforcement learning, and how they are grounded and evaluated in realistic long-horizon tasks.
+This line of work studies agents as complete systems: how they interact in social environments, how they improve through agentic RL, and how they are grounded and evaluated in realistic long-horizon tasks.
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">WWW 2026 Oral</div><img src='images/policysim26.png' alt="PolicySim preview" width="100%"></div></div>
