@@ -9,7 +9,7 @@
 
 
 # 💻 Research Topics
-- Graph Transfer Learning
-- Graph Adversarial Attack
-- LLM Agent
-- LLM Reasoning
+- Large Language Models
+- LLM Agents
+- LLM Reasoning and Alignment
+- Embodied AI and Humanoid VLA
