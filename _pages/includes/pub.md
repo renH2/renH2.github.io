@@ -25,14 +25,14 @@ Oral presentation. In Proceedings of the ACM Web Conference 2026 (WWW'26).
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2026</div><img src='images/rapo26.png' alt="RAPO preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2026 Oral</div><img src='images/rapo26.png' alt="RAPO preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Agentic RL for Stronger Exploration in LLM Agents** \\
 [RAPO: Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization](https://arxiv.org/abs/2603.03078) \\
 Siwei Zhang, Yun Xiong, Xi Chen, Zi'an Jia, **Renhong Huang**, Jiarong Xu, Jiawei Zhang. \\
  \\
-In Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'26).
+Oral presentation. In Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'26).
 
 </div>
 </div>
@@ -89,14 +89,14 @@ In Proceedings of Advances in Neural Information Processing Systems (NeurIPS'25)
 My earlier work in graph machine learning focused on transfer, data-centric learning, and privacy/safety. I keep a concise selection here.
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><img src='images/kdd24.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024 Oral</div><img src='images/kdd24.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Graph Domain Adaptation from Data-centric Perspective** \\
 [Can Modifying Data Address Graph Domain Adaptation?](https://arxiv.org/pdf/2407.19311) \\
 **Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang. \\
  \\
-In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'24).
+Oral presentation. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'24).
 
 </div>
 </div>
