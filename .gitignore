@@ -11,6 +11,14 @@ Gemfile.lock
 node_modules
 package-lock.json
 
-paper
+paper/*
+!paper/wwwpage/
+paper/wwwpage/*
+!paper/wwwpage/index.html
+!paper/wwwpage/WWW_PolicySim.pdf
+!paper/wwwpage/assets/
+paper/wwwpage/assets/*
+!paper/wwwpage/assets/figure1.png
+!paper/wwwpage/assets/policysim-figure1.png
 
 cv-latex

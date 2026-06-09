@@ -16,10 +16,10 @@ This line of work studies agents as complete systems: how they interact in socia
 <div class='paper-box-text' markdown="1">
 
 **Multi-Agent Social Simulation for Proactive Policy Optimization** \\
-[PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization](https://arxiv.org/abs/2603.19649) \\
+[PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization]({{ '/paper/wwwpage/' | relative_url }}) \\
 **Renhong Huang**, Ning Tang, Jiarong Xu, Yuxuan Cao, Qingqian Tu, Sheng Guo, Bo Zheng, Huiyuan Liu, Yang Yang. \\
  \\
-Oral presentation. In Proceedings of the ACM Web Conference 2026 (WWW'26).
+Oral presentation. In Proceedings of the ACM Web Conference 2026 (WWW'26). [[arXiv](https://arxiv.org/abs/2603.19649)] [[PDF]({{ '/paper/wwwpage/WWW_PolicySim.pdf' | relative_url }})]
 
 </div>
 </div>

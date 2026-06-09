@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PolicySim</title>
+    <meta name="description" content="PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization">
+    <style>
+      :root {
+        --ink: #161513;
+        --muted: #62605a;
+        --paper: #fffdf8;
+        --soft: #f4f1e9;
+        --line: #d8d3c7;
+        --line-dark: #25231f;
+        --accent: #b42318;
+        --blue: #0b66b3;
+        --green: #3f7a45;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Aptos", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      body[data-lang="en"] .zh,
+      body[data-lang="zh"] .en {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 253, 248, 0.94);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        width: min(var(--max), calc(100% - 40px));
+        min-height: 64px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--ink);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 3px;
+        gap: 2px;
+      }
+
+      .brand-mark span {
+        border-radius: 50%;
+      }
+
+      .brand-mark span:nth-child(1) {
+        background: var(--accent);
+      }
+
+      .brand-mark span:nth-child(2) {
+        background: var(--blue);
+      }
+
+      .brand-mark span:nth-child(3) {
+        background: var(--green);
+      }
+
+      .brand-mark span:nth-child(4) {
+        background: #c58a1d;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-link,
+      .lang-button {
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 8px 12px;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .nav-link:hover,
+      .lang-button:hover {
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+
+      .nav-link.primary {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+
+      .oral-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-left: 10px;
+        border: 1px solid var(--accent);
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: #fff0ed;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .hero {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        padding: 54px 0 38px;
+      }
+
+      .venue {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      h1 {
+        max-width: 980px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(32px, 4.45vw, 56px);
+        line-height: 1.08;
+        font-weight: 540;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        max-width: 900px;
+        margin: 24px 0 0;
+        color: #34322e;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(19px, 2.1vw, 27px);
+        line-height: 1.35;
+      }
+
+      .author-block {
+        margin-top: 38px;
+        border-top: 1px solid var(--line-dark);
+        border-bottom: 1px solid var(--line);
+        padding: 22px 0;
+      }
+
+      .authors {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr 0.8fr;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .meta-item {
+        min-height: 92px;
+        padding: 20px 18px 20px 0;
+        border-right: 1px solid var(--line);
+      }
+
+      .meta-item:last-child {
+        border-right: 0;
+        padding-left: 18px;
+      }
+
+      .meta-item:nth-child(2),
+      .meta-item:nth-child(3) {
+        padding-left: 18px;
+      }
+
+      .meta-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .meta-value {
+        margin-top: 8px;
+        font-size: 15px;
+        font-weight: 650;
+        line-height: 1.35;
+      }
+
+      .section {
+        border-top: 1px solid var(--line);
+        padding: 48px 0;
+      }
+
+      .section-inner {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: 28px;
+        margin-bottom: 24px;
+      }
+
+      .kicker {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(26px, 3vw, 40px);
+        line-height: 1.12;
+        font-weight: 540;
+        letter-spacing: 0;
+      }
+
+      .copy {
+        max-width: 820px;
+        margin: 0;
+        color: #34322e;
+        font-size: 16px;
+        line-height: 1.58;
+      }
+
+      .copy + .copy {
+        margin-top: 10px;
+      }
+
+      .body-list {
+        max-width: 860px;
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: #34322e;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .body-list li + li {
+        margin-top: 5px;
+      }
+
+      .figure-panel {
+        border: 1px solid var(--line-dark);
+        border-radius: 8px;
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      .figure-panel img {
+        width: 100%;
+        background: #ffffff;
+      }
+
+      .figure-panel.compact img {
+        width: min(560px, 100%);
+        margin: 0 auto;
+        padding: 16px;
+      }
+
+      .figure-panel.method img {
+        width: min(900px, 100%);
+        margin: 0 auto;
+        padding: 14px;
+      }
+
+      .caption {
+        border-top: 1px solid var(--line);
+        padding: 11px 14px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .contrib-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .contrib {
+        min-height: 160px;
+        background: var(--paper);
+        padding: 18px;
+      }
+
+      .contrib b {
+        display: block;
+        margin-bottom: 9px;
+        font-size: 18px;
+      }
+
+      .contrib p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .wide-card {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: #ffffff;
+      }
+
+      .wide-card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .table-wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        overflow-x: auto;
+        border: 1px solid var(--line-dark);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 760px;
+        font-size: 13px;
+      }
+
+      caption {
+        caption-side: top;
+        padding: 14px 16px 12px;
+        color: var(--ink);
+        text-align: left;
+        font-size: 15px;
+        font-weight: 750;
+      }
+
+      th,
+      td {
+        border-top: 1px solid var(--line);
+        padding: 9px 11px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+
+      th:first-child,
+      td:first-child {
+        text-align: left;
+        position: sticky;
+        left: 0;
+        background: #ffffff;
+        z-index: 1;
+      }
+
+      thead th {
+        background: var(--soft);
+        color: #3c3934;
+        font-weight: 750;
+      }
+
+      thead th:first-child {
+        background: var(--soft);
+        z-index: 2;
+      }
+
+      tbody tr:hover td {
+        background: #faf7ee;
+      }
+
+      tbody tr.highlight td {
+        background: #fff3ef;
+        font-weight: 750;
+      }
+
+      tbody tr.highlight td:first-child {
+        color: var(--accent);
+      }
+
+      .yes {
+        color: var(--green);
+        font-weight: 850;
+      }
+
+      .no {
+        color: var(--accent);
+        font-weight: 850;
+      }
+
+      .table-note {
+        margin: 8px auto 20px;
+        max-width: 1040px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .table-stack {
+        display: grid;
+        gap: 28px;
+      }
+
+      .citation {
+        margin: 0;
+        border: 1px solid var(--line-dark);
+        border-radius: 8px;
+        background: #181715;
+        color: #f7f2e8;
+        padding: 22px;
+        overflow-x: auto;
+        font: 13px/1.55 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer-inner {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+      }
+
+      @media (max-width: 920px) {
+        .nav {
+          min-height: auto;
+          padding: 14px 0;
+          align-items: flex-start;
+        }
+
+        .author-block,
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .hero-meta,
+        .contrib-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .meta-item:nth-child(2n) {
+          border-right: 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav,
+        .hero,
+        .section-inner,
+        .footer-inner {
+          width: min(var(--max), calc(100% - 28px));
+        }
+
+        .nav-actions {
+          gap: 6px;
+        }
+
+        .nav-link,
+        .lang-button {
+          padding: 7px 9px;
+        }
+
+        .hero {
+          padding: 38px 0 30px;
+        }
+
+        h1 {
+          font-size: 35px;
+        }
+
+        .subtitle {
+          font-size: 18px;
+        }
+
+        .hero-meta,
+        .contrib-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .meta-item,
+        .meta-item:nth-child(2),
+        .meta-item:nth-child(3),
+        .meta-item:last-child {
+          min-height: auto;
+          border-right: 0;
+          padding: 16px 0;
+        }
+
+        .section {
+          padding: 38px 0;
+        }
+
+        .figure-panel.compact img {
+          padding: 14px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body data-lang="en">
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>PolicySim</span>
+        </a>
+        <div class="nav-actions">
+          <a class="nav-link" href="#motivation"><span class="en">Motivation</span><span class="zh">动机</span></a>
+          <a class="nav-link" href="#framework"><span class="en">Framework</span><span class="zh">框架</span></a>
+          <a class="nav-link" href="#experiments"><span class="en">Experiments</span><span class="zh">实验</span></a>
+          <a class="nav-link primary" href="WWW_PolicySim.pdf"><span class="en">Paper</span><span class="zh">论文</span></a>
+          <button class="lang-button" type="button" id="langToggle" aria-label="Switch language">CN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="venue">
+          <span class="en">The ACM Web Conference 2026 · Dubai, United Arab Emirates</span>
+          <span class="zh">ACM Web Conference 2026 · 迪拜，阿联酋</span>
+          <span class="oral-badge">WWW Oral</span>
+        </p>
+        <h1>
+          PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization
+        </h1>
+        <p class="subtitle">
+          <span class="en">A proactive simulation framework for evaluating social platform interventions before deployment.</span>
+          <span class="zh">一个用于在真实部署前评估和优化社交平台干预策略的主动式仿真框架。</span>
+        </p>
+
+        <div class="author-block">
+          <p class="authors">
+            Renhong Huang, Ning Tang, Jiarong Xu, Yuxuan Cao, Qingqian Tu, Sheng Guo, Bo Zheng, Huiyuan Liu, Yang Yang
+          </p>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <div class="meta-label"><span class="en">Keywords</span><span class="zh">关键词</span></div>
+            <div class="meta-value">Social Simulation · Large Language Model · Multi-Agent</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Code</div>
+            <div class="meta-value"><a href="https://github.com/renH2/PolicySim">Link</a></div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">DOI</div>
+            <div class="meta-value"><a href="https://doi.org/10.1145/3774904.3792555">10.1145/3774904.3792555</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="abstract">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="kicker"><span class="en">Abstract</span><span class="zh">摘要</span></div>
+            <div>
+              <h2><span class="en">Proactive policy optimization in a simulated social ecosystem.</span><span class="zh">在仿真社交生态中主动优化平台策略。</span></h2>
+              <p class="copy" style="margin-top: 22px;">
+                <span class="en">PolicySim models the bidirectional dynamics between user behavior and platform interventions. It combines a user-agent module refined with SFT and DPO, and an adaptive intervention module based on contextual bandits with message passing.</span>
+                <span class="zh">PolicySim 建模用户行为与平台干预策略之间的双向动态关系。框架包含经 SFT 与 DPO 优化的用户智能体模块，以及结合消息传递的上下文 bandit 自适应干预模块。</span>
+              </p>
+              <p class="copy">
+                <span class="en">The goal is to evaluate intervention policies such as recommendation and exposure control before they are deployed to real users, reducing the risks of reactive A/B testing.</span>
+                <span class="zh">其目标是在推荐系统、曝光控制等策略上线前进行评估与优化，从而降低仅依赖真实用户 A/B 测试所带来的滞后性和潜在风险。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="motivation">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="kicker"><span class="en">Motivation</span><span class="zh">动机</span></div>
+            <div>
+              <h2><span class="en">From reactive A/B testing to proactive simulation.</span><span class="zh">从被动 A/B 测试到主动仿真。</span></h2>
+              <p class="copy" style="margin-top: 22px;">
+                <span class="en"><strong>Figure 1 contrasts two evaluation paradigms.</strong> In standard A/B testing, a new intervention is deployed to real users first, and negative social effects are discovered only after outcomes are observed.</span>
+                <span class="zh"><strong>Figure 1 对比了两种评估范式。</strong> 在传统 A/B 测试中，新的干预策略需要先部署到真实用户环境中，负面社会影响往往只能在结果发生之后被观察到。</span>
+              </p>
+              <p class="copy">
+                <span class="en"><strong>PolicySim moves this feedback loop into a sandbox.</strong> The intervention policy is evaluated on LLM-based agents before deployment, so the platform can inspect risks, collect feedback, and optimize the policy without directly exposing real users to untested interventions.</span>
+                <span class="zh"><strong>PolicySim 将这个反馈循环前移到仿真沙盒中。</strong> 干预策略先在 LLM 智能体环境中被评估，平台可以在真实上线前检查风险、收集反馈并优化策略，而不是直接让真实用户暴露在未验证的干预中。</span>
+              </p>
+            </div>
+          </div>
+          <figure class="figure-panel compact">
+            <img src="assets/policysim-figure1.png" alt="Figure 1 comparing reactive A/B testing with proactive PolicySim evaluation">
+            <figcaption class="caption">
+              <span class="en"><b>Figure 1.</b> PolicySim proactively evaluates and optimizes intervention policies prior to deployment using feedback that mirrors real-world dynamics.</span>
+              <span class="zh"><b>Figure 1.</b> PolicySim 在部署前利用接近真实动态的沙盒反馈，对平台干预策略进行主动评估与优化。</span>
+            </figcaption>
+          </figure>
+
+          <div style="margin-top: 34px;">
+            <div class="table-wrap">
+              <table>
+                <caption><span class="en">Table 1. Comparison with recent social simulation frameworks.</span><span class="zh">Table 1. 与近期社交仿真框架的比较。</span></caption>
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Scale</th>
+                    <th>Relation</th>
+                    <th>IP.</th>
+                    <th>AI.</th>
+                    <th>Env.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight">
+                    <td>PolicySim</td>
+                    <td>1000</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td>X & Weibo</td>
+                  </tr>
+                  <tr>
+                    <td>Oasis</td>
+                    <td>1M</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="no">✗</td>
+                    <td>X & Reddit</td>
+                  </tr>
+                  <tr>
+                    <td>Agent4rec</td>
+                    <td>1000</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="no">✗</td>
+                    <td>Movie Rec</td>
+                  </tr>
+                  <tr>
+                    <td>HiSim</td>
+                    <td>700</td>
+                    <td class="no">✗</td>
+                    <td class="no">✗</td>
+                    <td class="no">✗</td>
+                    <td>X</td>
+                  </tr>
+                  <tr>
+                    <td>Stopia</td>
+                    <td>2</td>
+                    <td class="no">✗</td>
+                    <td class="no">✗</td>
+                    <td class="no">✗</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">
+              <span class="en">This is a comparison with existing simulation environments rather than an experiment result. PolicySim is the only listed framework that simultaneously supports evolving relations, explicit intervention policies, and adaptive intervention optimization.</span>
+              <span class="zh">这里展示的是与现有仿真环境的系统比较，而不是实验结果。PolicySim 是表中唯一同时支持动态关系、显式干预策略和自适应干预优化的框架。</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="framework">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="kicker"><span class="en">Framework</span><span class="zh">框架</span></div>
+            <div>
+              <h2><span class="en">Simulation sandbox framework.</span><span class="zh">仿真沙盒框架。</span></h2>
+              <p class="copy" style="margin-top: 22px;">
+                <span class="en">PolicySim consists of two tightly coupled modules: <strong>a user agent module</strong> and <strong>an intervention policy module</strong>. Each agent is grounded in an authentic profile, maintains memory, updates stance over time, and performs social actions such as post, retweet, reply, follow, and unfollow.</span>
+                <span class="zh">PolicySim 由两个紧密耦合的模块组成：<strong>用户智能体模块</strong>与<strong>干预策略模块</strong>。每个智能体基于真实用户画像，维护记忆，随轮次更新立场，并执行发帖、转发、回复、关注、取关等社交动作。</span>
+              </p>
+              <p class="copy">
+                <span class="en">The platform module instantiates <strong>recommendation</strong> and <strong>exposure control</strong>. Sandbox reactions become reward signals for adaptive policy learning.</span>
+                <span class="zh">平台模块显式实例化<strong>推荐系统</strong>与<strong>曝光控制</strong>。沙盒中的反应会转化为自适应策略学习的奖励信号。</span>
+              </p>
+              <p class="copy">
+                <span class="en">This separates <strong>behavioral realism</strong> from <strong>policy control</strong>: agents simulate users, while intervention modules determine what information is recommended, suppressed, or exposed.</span>
+                <span class="zh">这一设计区分了<strong>行为真实性</strong>与<strong>策略可控性</strong>：智能体模拟用户，干预模块决定信息如何被推荐、抑制或曝光。</span>
+              </p>
+            </div>
+          </div>
+          <figure class="figure-panel method" style="margin-bottom: 18px;">
+            <img src="assets/figure1.png" alt="PolicySim method architecture">
+            <figcaption class="caption">
+              <span class="en"><b>Method figure.</b> PolicySim couples trained social agents with intervention policy training. Sandbox rewards are used to optimize recommendation and exposure-control decisions.</span>
+              <span class="zh"><b>方法图。</b> PolicySim 将训练后的社交智能体与干预策略训练耦合起来，通过沙盒反馈优化推荐与曝光控制决策。</span>
+            </figcaption>
+          </figure>
+          <div class="contrib-grid">
+            <article class="contrib">
+              <b><span class="en">User agents</span><span class="zh">用户智能体</span></b>
+              <p><span class="en">Profiles, memories, stance, behaviors, and evolving relations are used to simulate platform-specific users.</span><span class="zh">通过用户画像、记忆、立场、行为和动态关系来模拟特定平台上的用户。</span></p>
+            </article>
+            <article class="contrib">
+              <b><span class="en">Agent training</span><span class="zh">智能体训练</span></b>
+              <p><span class="en">SFT improves behavioral realism; DPO further aligns action preferences with observed social media behavior.</span><span class="zh">SFT 提升行为真实性，DPO 进一步对齐真实社交媒体中的行动偏好。</span></p>
+            </article>
+            <article class="contrib">
+              <b><span class="en">Adaptive policy</span><span class="zh">自适应策略</span></b>
+              <p><span class="en">A contextual bandit learns from sandbox rewards to optimize recommendation and exposure control policies.</span><span class="zh">上下文 bandit 从沙盒奖励中学习，用于优化推荐和曝光控制策略。</span></p>
+            </article>
+          </div>
+
+          <div class="wide-card">
+            <h3><span class="en">Adaptive intervention policy</span><span class="zh">自适应干预策略</span></h3>
+            <p class="copy">
+              <span class="en"><strong>Adaptive intervention</strong> is modeled as a contextual bandit. Recommendation arms correspond to user-post pairs, while exposure-control arms correspond to user-probability pairs. Rewards are tied to target outcomes such as cross-viewpoint interaction, low toxicity, and misinformation mitigation.</span>
+              <span class="zh"><strong>自适应干预</strong>被建模为上下文 bandit。推荐场景中的 arm 对应用户-帖子对，曝光控制场景中的 arm 对应用户-概率对。奖励与目标结果绑定，例如跨观点互动、低毒性和错误信息抑制。</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experiments">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="kicker"><span class="en">Experiments</span><span class="zh">实验</span></div>
+            <div>
+              <h2><span class="en">Metrics and micro-level simulation results.</span><span class="zh">实验指标与微观仿真实验结果。</span></h2>
+              <p class="copy" style="margin-top: 22px;">
+                <span class="en">Simulation quality is evaluated from both micro and macro perspectives. At the micro level, the evaluation measures <strong>content quality</strong>, <strong>behavior alignment</strong>, <strong>self-consistency</strong>, and <strong>social capability</strong>.</span>
+                <span class="zh">仿真质量从微观和宏观两个层面进行评估。在微观层面，评估内容包括<strong>内容质量</strong>、<strong>行为对齐</strong>、<strong>自一致性</strong>以及<strong>社会交互能力</strong>。</span>
+              </p>
+              <p class="copy">
+                <span class="en">The table below focuses on whether an individual agent can <strong>write like a real user</strong>, <strong>choose realistic actions</strong>, and <strong>participate naturally</strong> in social contexts.</span>
+                <span class="zh">下表关注单个智能体是否能<strong>像真实用户一样写作</strong>、<strong>选择合理行为</strong>，并<strong>自然参与社交语境</strong>。</span>
+              </p>
+              <ul class="body-list">
+                <li><span class="en"><b>Content quality:</b> BERTScore F1 and BertSim evaluate whether generated posts resemble real user posts semantically and lexically.</span><span class="zh"><b>内容质量：</b> 使用 BERTScore F1 和 BertSim 衡量生成内容与真实用户帖子在语义与文本层面的相似性。</span></li>
+                <li><span class="en"><b>Behavior alignment:</b> accuracy of replicating human-like actions such as posting or retweeting.</span><span class="zh"><b>行为对齐：</b> 衡量智能体是否能复现类似真人的发帖、转发等行为选择。</span></li>
+                <li><span class="en"><b>Self-consistency:</b> whether the agent can correctly identify its own generated content.</span><span class="zh"><b>自一致性：</b> 衡量智能体生成内容与其内部行为偏好是否一致。</span></li>
+                <li><span class="en"><b>Social capability:</b> LLM-as-a-Judge scores for engagement, robustness, and suitability.</span><span class="zh"><b>社会交互能力：</b> 通过 LLM-as-a-Judge 评估参与度、鲁棒性与整体适用性。</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="table-stack">
+            <div>
+              <div class="table-wrap">
+                <table>
+                  <caption><span class="en">Table 2. Micro-level performance on the TwiBot-20 dataset.</span><span class="zh">Table 2. TwiBot-20 数据集上的微观仿真性能。</span></caption>
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>BERTScore F1 ↑</th>
+                      <th>BertSim ↑</th>
+                      <th>Behavior Acc. ↑</th>
+                      <th>Self Acc. ↑</th>
+                      <th>Engagement ↑</th>
+                      <th>Robustness ↑</th>
+                      <th>Suitability ↑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Random</td>
+                      <td>28.55 ±4.18</td>
+                      <td>74.42 ±12.08</td>
+                      <td>36.11 ±25.30</td>
+                      <td>21.20 ±1.65</td>
+                      <td>2.65 ±0.55</td>
+                      <td>2.31 ±0.54</td>
+                      <td>2.11 ±0.14</td>
+                    </tr>
+                    <tr>
+                      <td>GLM4-light</td>
+                      <td>46.01 ±10.35</td>
+                      <td>81.95 ±13.64</td>
+                      <td>48.33 ±27.64</td>
+                      <td>47.20 ±27.64</td>
+                      <td>2.91 ±0.40</td>
+                      <td>2.70 ±0.57</td>
+                      <td>57.64 ±0.50</td>
+                    </tr>
+                    <tr>
+                      <td>Llama-3-8B-Instruct</td>
+                      <td>46.32 ±13.07</td>
+                      <td>85.22 ±6.81</td>
+                      <td>52.36 ±26.21</td>
+                      <td>45.60 ±25.95</td>
+                      <td>3.16 ±0.49</td>
+                      <td>3.51 ±0.50</td>
+                      <td>71.85 ±0.45</td>
+                    </tr>
+                    <tr>
+                      <td>Qwen2.5-0.5B-Instruct</td>
+                      <td>46.64 ±23.99</td>
+                      <td>81.38 ±9.03</td>
+                      <td>47.78 ±22.74</td>
+                      <td>24.30 ±19.52</td>
+                      <td>2.95 ±0.45</td>
+                      <td>2.43 ±0.57</td>
+                      <td>47.22 ±0.50</td>
+                    </tr>
+                    <tr>
+                      <td>Qwen2.5-3B-Instruct</td>
+                      <td>48.26 ±12.57</td>
+                      <td>85.91 ±6.35</td>
+                      <td>60.56 ±26.87</td>
+                      <td>40.40 ±26.98</td>
+                      <td>3.17 ±0.47</td>
+                      <td>2.65 ±0.61</td>
+                      <td>52.41 ±0.50</td>
+                    </tr>
+                    <tr>
+                      <td>Qwen2.5-7B-Instruct</td>
+                      <td>49.48 ±11.77</td>
+                      <td>85.52 ±6.63</td>
+                      <td>50.56 ±25.60</td>
+                      <td>51.20 ±29.98</td>
+                      <td>3.29 ±0.47</td>
+                      <td>2.71 ±0.61</td>
+                      <td>63.83 ±0.48</td>
+                    </tr>
+                    <tr>
+                      <td>PolicySim-φ</td>
+                      <td>45.16 ±14.91</td>
+                      <td>80.15 ±8.23</td>
+                      <td>58.33 ±29.95</td>
+                      <td>27.20 ±21.82</td>
+                      <td>3.04 ±0.42</td>
+                      <td>2.52 ±0.57</td>
+                      <td>55.17 ±0.50</td>
+                    </tr>
+                    <tr>
+                      <td>PolicySim-SFT</td>
+                      <td>52.66 ±15.53</td>
+                      <td>86.77 ±7.55</td>
+                      <td>54.44 ±22.91</td>
+                      <td>56.40 ±25.83</td>
+                      <td>3.00 ±0.42</td>
+                      <td>2.42 ±0.53</td>
+                      <td>44.83 ±0.50</td>
+                    </tr>
+                    <tr>
+                      <td>PolicySim-DPO</td>
+                      <td>47.95 ±13.24</td>
+                      <td>83.20 ±8.13</td>
+                      <td>53.89 ±24.41</td>
+                      <td>50.40 ±25.37</td>
+                      <td>3.14 ±0.47</td>
+                      <td>2.67 ±0.58</td>
+                      <td>61.27 ±0.49</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td>PolicySim</td>
+                      <td>58.05 ±15.96</td>
+                      <td>88.06 ±6.32</td>
+                      <td>65.56 ±19.71</td>
+                      <td>56.00 ±25.61</td>
+                      <td>3.20 ±0.44</td>
+                      <td>2.73 ±0.61</td>
+                      <td>59.44 ±0.49</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-note">
+                <span class="en">Values are averaged over five runs with standard deviations. Higher is better for all reported metrics.</span>
+                <span class="zh">所有结果为五次运行的平均值及标准差。表中指标均为数值越高越好。</span>
+              </p>
+            </div>
+
+            <div class="wide-card">
+              <h3><span class="en">Adaptive intervention results</span><span class="zh">自适应干预结果</span></h3>
+              <p class="copy">
+                <span class="en">The second evaluation asks whether <strong>sandbox feedback</strong> can improve intervention policies. Objective 1 promotes cross-viewpoint interactions while keeping toxicity low; Objective 2 controls exposure to reduce misinformation propagation.</span>
+                <span class="zh">第二组评估关注<strong>沙盒反馈</strong>是否能真正优化干预策略。目标 1 在保持低毒性的同时促进跨观点互动；目标 2 通过曝光控制降低错误信息传播比例。</span>
+              </p>
+            </div>
+
+            <div>
+              <div class="table-wrap">
+                <table>
+                  <caption><span class="en">Table 3. Adaptive intervention performance under two objectives.</span><span class="zh">Table 3. 两类目标下的自适应干预性能。</span></caption>
+                  <thead>
+                    <tr>
+                      <th rowspan="2">Method</th>
+                      <th colspan="3">Objective 1</th>
+                      <th>Objective 2</th>
+                    </tr>
+                    <tr>
+                      <th>Stance</th>
+                      <th>Toxicity ↓</th>
+                      <th>Cross interactions ↑</th>
+                      <th>Misinformation ratio ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Origin</td>
+                      <td>0.014 (0.37)</td>
+                      <td>0.0556</td>
+                      <td>0.04</td>
+                      <td>40%</td>
+                    </tr>
+                    <tr>
+                      <td>ε-greedy</td>
+                      <td>0.184 (0.42)</td>
+                      <td>0.0426</td>
+                      <td>0.14</td>
+                      <td>26%</td>
+                    </tr>
+                    <tr>
+                      <td>UCB</td>
+                      <td>0.026 (0.34)</td>
+                      <td>0.0628</td>
+                      <td>0.50</td>
+                      <td>30%</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td>PolicySim</td>
+                      <td>0.376 (0.48)</td>
+                      <td>0.0386</td>
+                      <td>0.56</td>
+                      <td>24%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-note">
+                <span class="en">PolicySim increases cross-viewpoint interactions, keeps toxicity lowest among the listed methods, and reduces misinformation propagation to the lowest ratio.</span>
+                <span class="zh">PolicySim 提升了跨观点互动比例，在列出的策略中保持最低毒性，并将错误信息传播比例降到最低。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="citation">
+        <div class="section-inner">
+          <div class="section-head">
+            <div class="kicker"><span class="en">Citation</span><span class="zh">引用</span></div>
+            <h2><span class="en">BibTeX</span><span class="zh">BibTeX</span></h2>
+          </div>
+          <pre class="citation"><code>@inproceedings{huang2026policysim,
+  title = {PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization},
+  author = {Huang, Renhong and Tang, Ning and Xu, Jiarong and Cao, Yuxuan and Tu, Qingqian and Guo, Sheng and Zheng, Bo and Liu, Huiyuan and Yang, Yang},
+  booktitle = {Proceedings of the ACM Web Conference 2026},
+  year = {2026},
+  doi = {10.1145/3774904.3792555}
+}</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span><span class="en">For collaboration or questions, contact </span><span class="zh">合作或疑问请联系 </span><a href="mailto:renh2@zju.edu.cn">renh2@zju.edu.cn</a></span>
+      </div>
+    </footer>
+
+    <script>
+      const button = document.getElementById("langToggle");
+      const body = document.body;
+
+      button.addEventListener("click", () => {
+        const next = body.dataset.lang === "en" ? "zh" : "en";
+        body.dataset.lang = next;
+        document.documentElement.lang = next === "en" ? "en" : "zh-CN";
+        button.textContent = next === "en" ? "CN" : "EN";
+      });
+    </script>
+  </body>
+</html>
