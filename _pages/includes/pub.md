@@ -55,10 +55,10 @@ arXiv preprint. [[arXiv](https://arxiv.org/abs/2604.23190)]
 <div class='paper-box-text' markdown="1">
 
 **Agent Benchmarking for Long-Horizon Strategic Decision Making** \\
-[PTCG-Bench: Can LLM Agents Master Pokémon Trading Card Game?](https://arxiv.org/abs/2605.29653) \\
+[PTCG-Bench: Can LLM Agents Master Pokémon Trading Card Game?](https://ddhua.tech/ptcg-bench/) \\
 Dongdong Hua, Yifei Sun, **Renhong Huang**, Feng Gao, Chunping Wang, Yang Yang. \\
  \\
-arXiv preprint.
+arXiv preprint. [[arXiv](https://arxiv.org/abs/2605.29653)]
 
 </div>
 </div>
