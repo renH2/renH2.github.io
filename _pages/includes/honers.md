@@ -1,5 +1,5 @@
 # 🎖 Honors and Awards
-National Scholarship (Top 1%)
+National Scholarship (Top 1%)<br>
 Meritorious Winner for American Mathematical Competition (Top 7%)
 
 <!-- - *2024.10* National Scholarship (Top 1%)

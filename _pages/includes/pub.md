@@ -1,12 +1,12 @@
-# 🍉 Publications
+# 📄 Publications
 
 [//]: # (Full version see [Google Scholar]&#40;https://scholar.google.com/citations?user=9mxdFawAAAAJ&#41;)
 
 <div class='pub-note' markdown="1">
-My earlier work focused on graph learning foundations and foundation models for structured data, especially transfer, robustness, and privacy. My current research mainly centers on **large language models**, including LLM agents, multi-agent interaction, agentic RL, reasoning, grounding and evaluation, preference modeling for alignment, and embodied agents such as humanoid VLA.
+My earlier work focused on graph learning and foundation models for structured data, with an emphasis on transfer, robustness, and privacy. My current research centers on **large language models**, including LLM agents, multi-agent interaction, agentic RL, reasoning, grounding, and evaluation, preference modeling for alignment, and embodied agents such as humanoid VLA systems.
 </div>
 
-## 🤖 Agentic RL, Multi-Agent Systems, and Agent Benchmarks
+## Agentic RL, Multi-Agent Systems, and Agent Benchmarks
 
 <div class='research-cluster' markdown="1">
 This line of work studies agents as complete systems: how they interact in social environments, how they improve through agentic RL, and how they are grounded and evaluated in realistic long-horizon tasks.
@@ -64,10 +64,10 @@ arXiv preprint. [[arXiv](https://arxiv.org/abs/2605.29653)]
 </div>
 
 
-## 🌿 Preference Learning and Alignment
+## Preference Learning and Alignment
 
 <div class='research-cluster' markdown="1">
-Beyond acting well, agents also need to align with nuanced and diverse preferences. This work studies how preference structures can be organized explicitly instead of treated as a flat signal.
+Beyond acting well, agents also need to be aligned with nuanced and diverse preferences. This work studies how preference structures can be explicitly organized rather than treated as a flat signal.
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/tree25.png' alt="Tree of Preferences preview" width="100%"></div></div>
@@ -77,13 +77,13 @@ Beyond acting well, agents also need to align with nuanced and diverse preferenc
 [Tree of Preferences for Diversified Recommendation](https://arxiv.org/abs/2601.02386) \\
 Hanyang Yuan, Ning Tang, Tongya Zheng, Jiarong Xu, Xintong Hu, **Renhong Huang**, Shunyu Liu, Jiacong Hu, Jiawei Chen, Mingli Song. \\
  \\
-In Proceedings of Advances in Neural Information Processing Systems (NeurIPS'25).
+In Advances in Neural Information Processing Systems 38 (NeurIPS'25).
 
 </div>
 </div>
 
 
-## 📚 Selected Graph Learning Foundations
+## Selected Graph Learning Foundations
 
 <div class='research-cluster' markdown="1">
 My earlier work in graph machine learning focused on transfer, data-centric learning, and privacy/safety. I keep a concise selection here.
@@ -92,7 +92,7 @@ My earlier work in graph machine learning focused on transfer, data-centric lear
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024 Oral</div><img src='images/kdd24.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Graph Domain Adaptation from Data-centric Perspective** \\
+**Graph Domain Adaptation from a Data-Centric Perspective** \\
 [Can Modifying Data Address Graph Domain Adaptation?](https://arxiv.org/pdf/2407.19311) \\
 **Renhong Huang**, Jiarong Xu, Xin Jiang, Ruichuan An, Yang Yang. \\
  \\
@@ -105,11 +105,11 @@ Oral presentation. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/nips23.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Graph Pre-training from Data-centric Perspective** \\
-[Better with Less: A Data-Centric Prespective on Pre-Training Graph Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf) \\
+**Graph Pre-training from a Data-Centric Perspective** \\
+[Better with Less: A Data-Centric Perspective on Pre-Training Graph Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf) \\
 Jiarong Xu, **Renhong Huang**, Xin Jiang, Yuxuan Cao, Carl Yang, Chunping Wang, Yang Yang. \\
  \\
-In Proceedings of the 36th Advances in Neural Information Processing Systems (NeurIPS'23).
+In Advances in Neural Information Processing Systems 36 (NeurIPS'23).
 
 </div>
 </div>
@@ -120,9 +120,9 @@ In Proceedings of the 36th Advances in Neural Information Processing Systems (Ne
 
 **Graph Extraction Attack** \\
 [Extracting Training Data from Molecular Pre-trained Models](https://proceedings.neurips.cc/paper_files/paper/2024/file/b17e1642998a8214be240b3056f5faa5-Paper-Conference.pdf) \\
-**Renhong Huang**, Jiarong Xu, Zhiming Yang, Xiang Si, Xin Jiang, Hanyang Yuan, Chunping Wang, Yang Yang \\
+**Renhong Huang**, Jiarong Xu, Zhiming Yang, Xiang Si, Xin Jiang, Hanyang Yuan, Chunping Wang, Yang Yang. \\
  \\
-In Proceedings of the 37th Advances in Neural Information Processing Systems (NeurIPS'24).
+In Advances in Neural Information Processing Systems 37 (NeurIPS'24).
 
 </div>
 </div>
