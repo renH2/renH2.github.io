@@ -1,4 +1,5 @@
 # 🔥 News
+- *2026.08*: 🎉 One paper is accepted by CIKM 2026 Oral.
 - *2026.06*: 🎉 One paper is accepted by KDD 2026 Oral.
 - *2026.01*: 🎉 One paper is accepted by WWW 2026 Oral.
 - *2025.11*: 🎉 One paper is accepted by AAAI 2026.
