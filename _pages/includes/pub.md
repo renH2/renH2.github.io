@@ -51,14 +51,14 @@ In Proceedings of the Empirical Methods in Natural Language Processing 2026 (EMN
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/ptcg26.png' alt="PTCG-Bench preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/ptcg26.png' alt="PTCG-Bench preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Agent Benchmarking for Long-Horizon Strategic Decision Making** \\
 [PTCG-Bench: Can LLM Agents Master Pokémon Trading Card Game?](https://ddhua.tech/ptcg-bench/) \\
 Dongdong Hua, Yifei Sun, **Renhong Huang**, Feng Gao, Chunping Wang, Yang Yang. \\
  \\
-arXiv preprint. [[arXiv](https://arxiv.org/abs/2605.29653)]
+In Proceedings of the Empirical Methods in Natural Language Processing 2026 (EMNLP'26). [[arXiv](https://arxiv.org/abs/2605.29653)]
 
 </div>
 </div>

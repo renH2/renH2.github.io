@@ -82,10 +82,10 @@
     - Yang Yang
   publication_time: 2026
   venue:
-    name: arXiv preprint
-    short_name: arXiv 2026
-    presentation: Preprint
-  details: "A benchmark for evaluating whether LLM agents can handle long-horizon strategic decisions in Pokemon Trading Card Game."
+    name: Empirical Methods in Natural Language Processing
+    short_name: EMNLP'26
+    presentation: Main
+  details: "A benchmark for evaluating whether LLM agents can handle long-horizon strategic decisions in Pokemon Trading Card Game, accepted to EMNLP 2026."
   links:
     project: "https://ddhua.tech/ptcg-bench/"
     arxiv: "https://arxiv.org/abs/2605.29653"
