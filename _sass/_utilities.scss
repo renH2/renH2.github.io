@@ -475,14 +475,10 @@ a.reversefootnote {
 
 .news-scroll {
   max-height: calc(5 * 1.65em + 0.75rem);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
   padding-right: 0.5rem;
-
-  &:hover,
-  &:focus-within {
-    max-height: 24rem;
-    overflow-y: auto;
-  }
 
   ul {
     margin-bottom: 0;
