@@ -38,14 +38,14 @@ Oral presentation. In Proceedings of the 32nd ACM SIGKDD Conference on Knowledge
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/rat26.png' alt="RAT preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">EMNLP 2026 Main</div><img src='images/rat26.png' alt="RAT preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Environment-Grounded LLM Agents via Automated Configuration** \\
 [RAT: RunAnyThing via Fully Automated Environment Configuration](https://sitaod.github.io/rat/) \\
 **Renhong Huang**, Dongdong Hua, Yifei Sun, Sitao Ding, Hanyang Yuan, Daixin Wang, Yang Yang. \\
  \\
-arXiv preprint. [[arXiv](https://arxiv.org/abs/2604.23190)]
+In Proceedings of the Empirical Methods in Natural Language Processing 2026 (EMNLP'26). [[arXiv](https://arxiv.org/abs/2604.23190)]
 
 </div>
 </div>

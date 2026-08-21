@@ -1,0 +1,182 @@
+- id: policysim-2026
+  research_area: Agentic RL, Multi-Agent Systems, and Agent Benchmarks
+  topic: Multi-Agent Social Simulation for Proactive Policy Optimization
+  title: "PolicySim: An LLM-Based Agent Social Simulation Sandbox for Proactive Policy Optimization"
+  author_order:
+    - Renhong Huang
+    - Ning Tang
+    - Jiarong Xu
+    - Yuxuan Cao
+    - Qingqian Tu
+    - Sheng Guo
+    - Bo Zheng
+    - Huiyuan Liu
+    - Yang Yang
+  publication_time: 2026
+  venue:
+    name: Proceedings of the ACM Web Conference 2026
+    short_name: WWW'26
+    presentation: Oral
+  details: "An LLM-based multi-agent social simulation sandbox for proactive policy optimization."
+  links:
+    project: "/paper/wwwpage/"
+    arxiv: "https://arxiv.org/abs/2603.19649"
+    pdf: "/paper/wwwpage/WWW_PolicySim.pdf"
+  image: "/images/policysim26.png"
+
+- id: rapo-2026
+  research_area: Agentic RL, Multi-Agent Systems, and Agent Benchmarks
+  topic: Agentic RL for Stronger Exploration in LLM Agents
+  title: "RAPO: Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization"
+  author_order:
+    - Siwei Zhang
+    - Yun Xiong
+    - Xi Chen
+    - Zi'an Jia
+    - Renhong Huang
+    - Jiarong Xu
+    - Jiawei Zhang
+  publication_time: 2026
+  venue:
+    name: Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+    short_name: KDD'26
+    presentation: Oral
+  details: "A retrieval-augmented policy optimization method for improving exploration in LLM agents."
+  links:
+    arxiv: "https://arxiv.org/abs/2603.03078"
+  image: "/images/rapo26.png"
+
+- id: rat-2026
+  research_area: Agentic RL, Multi-Agent Systems, and Agent Benchmarks
+  topic: Environment-Grounded LLM Agents via Automated Configuration
+  title: "RAT: RunAnyThing via Fully Automated Environment Configuration"
+  author_order:
+    - Renhong Huang
+    - Dongdong Hua
+    - Yifei Sun
+    - Sitao Ding
+    - Hanyang Yuan
+    - Daixin Wang
+    - Yang Yang
+  publication_time: 2026
+  venue:
+    name: Empirical Methods in Natural Language Processing
+    short_name: EMNLP'26
+    presentation: Main
+  details: "A system for grounding LLM agents in executable environments through fully automated environment configuration, accepted to EMNLP 2026."
+  links:
+    project: "https://sitaod.github.io/rat/"
+    arxiv: "https://arxiv.org/abs/2604.23190"
+  image: "/images/rat26.png"
+
+- id: ptcg-bench-2026
+  research_area: Agentic RL, Multi-Agent Systems, and Agent Benchmarks
+  topic: Agent Benchmarking for Long-Horizon Strategic Decision Making
+  title: "PTCG-Bench: Can LLM Agents Master Pokemon Trading Card Game?"
+  author_order:
+    - Dongdong Hua
+    - Yifei Sun
+    - Renhong Huang
+    - Feng Gao
+    - Chunping Wang
+    - Yang Yang
+  publication_time: 2026
+  venue:
+    name: arXiv preprint
+    short_name: arXiv 2026
+    presentation: Preprint
+  details: "A benchmark for evaluating whether LLM agents can handle long-horizon strategic decisions in Pokemon Trading Card Game."
+  links:
+    project: "https://ddhua.tech/ptcg-bench/"
+    arxiv: "https://arxiv.org/abs/2605.29653"
+  image: "/images/ptcg26.png"
+
+- id: tree-of-preferences-2025
+  research_area: Preference Learning and Alignment
+  topic: Structured Preference Modeling for Diversified Recommendation
+  title: "Tree of Preferences for Diversified Recommendation"
+  author_order:
+    - Hanyang Yuan
+    - Ning Tang
+    - Tongya Zheng
+    - Jiarong Xu
+    - Xintong Hu
+    - Renhong Huang
+    - Shunyu Liu
+    - Jiacong Hu
+    - Jiawei Chen
+    - Mingli Song
+  publication_time: 2025
+  venue:
+    name: Advances in Neural Information Processing Systems 38
+    short_name: NeurIPS'25
+    presentation: Conference
+  details: "A structured preference modeling approach for diversified recommendation."
+  links:
+    arxiv: "https://arxiv.org/abs/2601.02386"
+  image: "/images/tree25.png"
+
+- id: graph-domain-adaptation-2024
+  research_area: Selected Graph Learning Foundations
+  topic: Graph Domain Adaptation from a Data-Centric Perspective
+  title: "Can Modifying Data Address Graph Domain Adaptation?"
+  author_order:
+    - Renhong Huang
+    - Jiarong Xu
+    - Xin Jiang
+    - Ruichuan An
+    - Yang Yang
+  publication_time: 2024
+  venue:
+    name: Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+    short_name: KDD'24
+    presentation: Oral
+  details: "A data-centric study of graph domain adaptation through data modification."
+  links:
+    arxiv_pdf: "https://arxiv.org/pdf/2407.19311"
+  image: "/images/kdd24.png"
+
+- id: better-with-less-2023
+  research_area: Selected Graph Learning Foundations
+  topic: Graph Pre-training from a Data-Centric Perspective
+  title: "Better with Less: A Data-Centric Perspective on Pre-Training Graph Neural Networks"
+  author_order:
+    - Jiarong Xu
+    - Renhong Huang
+    - Xin Jiang
+    - Yuxuan Cao
+    - Carl Yang
+    - Chunping Wang
+    - Yang Yang
+  publication_time: 2023
+  venue:
+    name: Advances in Neural Information Processing Systems 36
+    short_name: NeurIPS'23
+    presentation: Conference
+  details: "A data-centric perspective on pre-training graph neural networks with less data."
+  links:
+    pdf: "https://proceedings.neurips.cc/paper_files/paper/2023/file/b29adb4bf2364acec8fb402ef731bb3b-Paper-Conference.pdf"
+  image: "/images/nips23.png"
+
+- id: graph-extraction-attack-2024
+  research_area: Selected Graph Learning Foundations
+  topic: Graph Extraction Attack
+  title: "Extracting Training Data from Molecular Pre-trained Models"
+  author_order:
+    - Renhong Huang
+    - Jiarong Xu
+    - Zhiming Yang
+    - Xiang Si
+    - Xin Jiang
+    - Hanyang Yuan
+    - Chunping Wang
+    - Yang Yang
+  publication_time: 2024
+  venue:
+    name: Advances in Neural Information Processing Systems 37
+    short_name: NeurIPS'24
+    presentation: Conference
+  details: "A study of training-data extraction risks in molecular pre-trained models."
+  links:
+    pdf: "https://proceedings.neurips.cc/paper_files/paper/2024/file/b17e1642998a8214be240b3056f5faa5-Paper-Conference.pdf"
+  image: "/images/nips24a.png"

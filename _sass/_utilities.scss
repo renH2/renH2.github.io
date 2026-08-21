@@ -468,3 +468,27 @@ a.reversefootnote {
   color: $danger-color;
   font-weight: bold;
 }
+
+/*
+   News list
+   ========================================================================== */
+
+.news-scroll {
+  max-height: calc(5 * 1.65em + 0.75rem);
+  overflow: hidden;
+  padding-right: 0.5rem;
+
+  &:hover,
+  &:focus-within {
+    max-height: 24rem;
+    overflow-y: auto;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+}

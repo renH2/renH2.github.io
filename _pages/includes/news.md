@@ -1,4 +1,8 @@
 # 🔥 News
+
+<div class="news-scroll" tabindex="0" markdown="1">
+
+- *2026.08*: 🎉 Two papers are accepted by EMNLP 2026.
 - *2026.08*: 🎉 One paper is accepted by CIKM 2026 Oral.
 - *2026.06*: 🎉 One paper is accepted by KDD 2026 Oral.
 - *2026.01*: 🎉 One paper is accepted by WWW 2026 Oral.
@@ -8,3 +12,5 @@
 - *2024.05*: 🎉 One paper is accepted by KDD 2024.
 - *2023.12*: 🎉 One paper is accepted by AAAI 2024.
 - *2023.05*: 🎉 One paper is accepted by NeurIPS 2023.
+
+</div>
