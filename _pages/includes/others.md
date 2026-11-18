@@ -4,7 +4,7 @@
 - *2018.09 - 2022.06*, Undergraduate, Chu Kochen Honors College, Zhejiang University, Hangzhou.
 
 # 🗞️ Academic Services
-- Conference Reviewer: WWW'22/23, IJCAI'23, AAAI'23/25/26, WSDM'23, SMP'23, ICLR'23, ICML'24/26, KDD'23/24/25/26, NeurIPS'24/25.
+- Conference Reviewer: WWW’22/23/26, IJCAI’23, AAAI’23/25/26/27, WSDM’23, SMP’23, ICLR’23/26/27, ICML’24/25/26, KDD’23/24/25/26/27, NeurIPS’24/25.
 - Teaching Assistant: Artificial Intelligence Algorithms and Systems, Zhejiang University, Fall 2023/Fall 2024.
 
 

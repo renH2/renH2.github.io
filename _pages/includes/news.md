@@ -2,7 +2,7 @@
 
 <div class="news-scroll" tabindex="0" markdown="1">
 
-- *2026.08*: 🎉 Two papers are accepted by EMNLP 2026.
+- *2026.08*: 🎉 Three papers are accepted by EMNLP 2026, including one selected as a **SAC Highlight (Top 0.3% of all submissions)**.
 - *2026.08*: 🎉 One paper is accepted by CIKM 2026 Oral.
 - *2026.06*: 🎉 One paper is accepted by KDD 2026 Oral.
 - *2026.01*: 🎉 One paper is accepted by WWW 2026 Oral.
